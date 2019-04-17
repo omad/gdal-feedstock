@@ -89,3 +89,8 @@ lyr.CreateFeature(feature)
 
 lyr = None
 ds = None
+
+# Check NetCDF4 Support
+ds = gdal.Open('test_data/modis.nc')
+driver = ds.GetDriver()
+assert driver.ShortName == 'netCDF'
