@@ -17,3 +17,8 @@ if errorlevel 1 exit 1
 :: Check shapefile read.
 ogrinfo sites.shp
 if errorlevel 1 exit 1
+
+
+:: Check NetCDF read.
+gdalinfo modis.nc
+if errorlevel 1 exit 1

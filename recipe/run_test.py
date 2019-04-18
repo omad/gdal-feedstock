@@ -91,6 +91,9 @@ lyr = None
 ds = None
 
 # Check NetCDF4 Support
-ds = gdal.Open('modis.nc', gdal.GA_ReadOnly)
+import os
+import os.path
+print(os.getcwd())
+ds = gdal.Open(os.path.join(__file__, 'test_data', 'modis.nc'), gdal.GA_ReadOnly)
 driver = ds.GetDriver()
 assert driver.ShortName == 'netCDF'
